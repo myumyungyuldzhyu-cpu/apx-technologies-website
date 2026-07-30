@@ -1,6 +1,6 @@
-import { useState } from "react";
-
 "use client";
+
+import { useState } from "react";
 
 import { motion } from "framer-motion";
 import {
@@ -23,8 +23,8 @@ const contacts = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@apx-technologies.com",
-    href: "mailto:info@apx-technologies.com",
+    value: "contact@apxtechnologies.dev",
+    href: "mailto:contact@apxtechnologies.dev",
   },
   {
     icon: MapPin,
