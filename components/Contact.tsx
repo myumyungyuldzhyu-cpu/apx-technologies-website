@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -64,6 +66,53 @@ const staggerContainer = {
 };
 
 export default function Contact() {
+const [loading, setLoading] = useState(false);
+const [success, setSuccess] = useState("");
+const [error, setError] = useState("");
+async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+
+  setLoading(true);
+  setSuccess("");
+  setError("");
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+
+  const payload = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    company: formData.get("company"),
+    message: formData.get("message"),
+  };
+
+  try {
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "Възникна грешка.");
+    }
+
+    setSuccess("Запитването беше изпратено успешно.");
+    form.reset();
+  } catch (error) {
+    setError(
+      error instanceof Error
+        ? error.message
+        : "Възникна неочаквана грешка."
+    );
+  } finally {
+    setLoading(false);
+  }
+}
   return (
     <section
       id="contact"
@@ -194,7 +243,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <form className="mt-8 grid gap-5">
+              <form onSubmit={handleSubmit} className="mt-8 grid gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <label className="grid gap-2">
                     <span className="text-xs font-semibold text-white/45">
@@ -249,14 +298,29 @@ export default function Contact() {
                   />
                 </label>
 
-                <button type="submit" className="apx-button-primary group mt-1">
+                <button
+                type="submit"
+                disabled={loading}
+                className="apx-button-primary group mt-1 disabled:opacity-60"
+                >
                   <Send size={16} />
-                  Започни проекта
+                  {loading ? "Изпращане..." : "Започни проекта"}
                   <ArrowRight
                     size={16}
                     className="transition group-hover:translate-x-1"
                   />
                 </button>
+                {success && (
+                  <p className="text-sm text-green-400">
+                    {success}
+                    </p>
+                  )}
+                  
+                  {error && (
+                    <p className="text-sm text-red-400">
+                      {error}
+                      </p>
+                    )}
               </form>
 
               <div className="mt-7 border-t border-white/[0.06] pt-6 text-center">
