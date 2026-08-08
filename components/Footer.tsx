@@ -127,7 +127,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:info@apx-technologies.com"
+                href="mailto:contact@apxtechnologies.dev"
                 className="group flex items-start gap-3 text-white/45 transition hover:text-white"
               >
                 <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-400/15 bg-blue-500/10 text-blue-400">
@@ -140,7 +140,7 @@ export default function Footer() {
                   </p>
 
                   <p className="mt-1 break-all text-[13px] font-semibold">
-                    apxtechnologies-alphaproxbg@abv.bg
+                    
                   </p>
                 </div>
               </a>

@@ -205,6 +205,56 @@ export const projects: Project[] = [
   liveUrl: "https://dentalux-premium.vercel.app",
   githubUrl: "",
 },
+{
+  slug: "apx-pergola",
+  title: "APX Pergola",
+  shortTitle: "APX Pergola",
+  category: "Премиум уебсайт за перголи",
+
+  projectType: "demo",
+  featured: true,
+
+  year: "2026",
+  status: "Demo Project",
+
+  shortDescription:
+    "Премиум демо уебсайт за компании за перголи с cinematic scroll анимации, LED сцени и модерно представяне на продуктите.",
+
+  description:
+    "APX Pergola е демонстрационен проект за компании, които предлагат биоклиматични перголи и премиум решения за външни пространства. Сайтът включва cinematic scroll изживяване, силен визуален ефект при дъжд, преход ден към нощ, LED осветление, модели перголи, реализирани проекти и форма за запитване.",
+
+  coverImage: "/projects/pergola-preview.webp",
+  gallery: ["/projects/pergola-preview.webp"],
+
+  technologies: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Responsive Design",
+  ],
+
+  features: [
+    "Cinematic scroll анимации",
+    "Анимация при дъжд",
+    "Преход ден към нощ",
+    "LED визуални ефекти",
+    "Представяне на модели",
+    "Галерия с проекти",
+    "Форма за оферта",
+    "Responsive дизайн",
+  ],
+
+  stats: [
+    { label: "Тип проект", value: "Demo Website" },
+    { label: "Индустрия", value: "Pergola" },
+    { label: "Статус", value: "Demo Project" },
+    { label: "Година", value: "2026" },
+  ],
+
+  liveUrl: "https://pergola-demo-alpha.vercel.app/",
+  githubUrl: "",
+},
   {
     slug: "aura-restaurant",
     title: "Aura Restaurant",

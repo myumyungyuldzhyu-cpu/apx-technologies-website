@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://apxtechnologies-alphaproxbg.com";
+const baseUrl = "https://apxtechnologies.dev";
 
 export default function robots(): MetadataRoute.Robots {
   return {

@@ -5,8 +5,8 @@ const jsonLd = {
   "@type": "Organization",
   name: "APX Technologies",
   alternateName: "Alpha Pro X BG",
-  url: "https://apxtechnologies-alphaproxbg.com",
-  logo: "https://apxtechnologies-alphaproxbg.com/favicon.ico",
+  url: "https://apxtechnologies.dev",
+  logo: "https://apxtechnologies/favicon.ico",
   description:
     "APX Technologies разработва модерни уебсайтове, уеб приложения и професионални дигитални решения за бизнеса.",
   founder: {
@@ -17,7 +17,7 @@ const jsonLd = {
     "@type": "ContactPoint",
     telephone: "+359899277511",
     contactType: "customer service",
-    email: "info@apx-technologies.com",
+    email: "contact@apxtechnologies.dev",
     availableLanguage: ["Bulgarian", "English"],
   },
   address: {
@@ -28,7 +28,7 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://apxtechnologies-alphaproxbg.com"),
+  metadataBase: new URL("https://apxtechnologies.dev"),
 
   title: {
     default: "APX Technologies",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "APX Technologies",
     description: "Premium Web Development & Digital Solutions",
-    url: "https://apxtechnologies-alphaproxbg.com",
+    url: "https://apxtechnologies.dev",
     siteName: "APX Technologies",
     locale: "bg_BG",
     type: "website",

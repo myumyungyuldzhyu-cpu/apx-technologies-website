@@ -53,6 +53,23 @@ const projects = [
     accent: "from-emerald-400/20 via-cyan-400/10 to-transparent",
     preview: "dental",
   },
+  {
+  title: "APX Pergola",
+  category: "Premium Pergola Website",
+  description:
+    "Премиум демо уебсайт за компании за перголи с cinematic scroll анимации, ефект при дъжд, преход ден–нощ, LED осветление, модели и реализирани проекти.",
+  technologies: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+  ],
+  href: "https://pergola-demo-alpha.vercel.app/",
+  liveUrl: "https://pergola-demo-alpha.vercel.app/",
+  size: "large",
+  accent: "from-amber-500/25 via-orange-400/10 to-transparent",
+  preview: "pergola",
+},
 ];
 
 const containerVariants = {
@@ -77,6 +94,36 @@ const itemVariants = {
 };
 
 function ProjectPreview({ type }: { type: string }) {
+  if (type === "pergola") {
+  return (
+    <div className="relative h-full min-h-[280px] overflow-hidden rounded-[24px] border border-white/10 bg-[#0c0a07]">
+      
+      <img
+        src="/projects/pergola-preview.webp"
+        alt="APX Pergola Website"
+        className="absolute inset-0 h-full w-full object-cover transition duration-700 hover:scale-105"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
+      <div className="absolute left-5 top-5 rounded-full border border-amber-400/30 bg-black/50 px-4 py-2 backdrop-blur-md">
+        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
+          Premium Outdoor Living
+        </span>
+      </div>
+
+      <div className="absolute bottom-5 left-5">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">
+          APX Technologies
+        </p>
+
+        <p className="mt-1 text-xl font-black text-white">
+          Pergola Experience
+        </p>
+      </div>
+    </div>
+  );
+}
   if (type === "directory") {
     return (
       <div className="relative h-full min-h-[250px] overflow-hidden rounded-[24px] border border-white/10 bg-[#0a1020] p-4 sm:p-5">
@@ -259,7 +306,19 @@ export default function Portfolio() {
                   }`}
                 >
                   <div className={isLarge || isWide ? "lg:order-2" : ""}>
-                    <ProjectPreview type={project.preview} />
+                    {project.liveUrl !== "#" ? (
+                      <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="block h-full cursor-pointer"
+                      aria-label={`Отвори ${project.title}`}
+                      >
+                        <ProjectPreview type={project.preview} />
+                        </a>
+                        ) : (
+                        <ProjectPreview type={project.preview} />
+                        )}
                   </div>
 
                   <div
