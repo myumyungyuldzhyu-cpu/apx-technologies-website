@@ -1,26 +1,25 @@
+
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
 
-const baseUrl = "https://apxtechnologies-alphaproxbg.com";
+const baseUrl = "https://apxtechnologies.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const projectPages = projects.map((project) => ({
-    url: `${baseUrl}/projects/${project.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
+  const projectPages: MetadataRoute.Sitemap =
+    projects.map((project) => ({
+      url: `${baseUrl}/projects/${encodeURIComponent(project.slug)}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }));
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },

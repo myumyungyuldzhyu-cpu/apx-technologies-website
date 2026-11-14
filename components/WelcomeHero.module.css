@@ -1,0 +1,545 @@
+
+/* ==========================================
+   APX TECHNOLOGIES — WELCOME HERO
+========================================== */
+
+.track {
+  position: relative;
+  height: 185vh;
+  background: #080b18;
+  color: #fff;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 55% 55%,
+      rgba(26, 83, 210, 0.21),
+      transparent 47%
+    ),
+    radial-gradient(
+      ellipse at 48% 85%,
+      rgba(85, 49, 167, 0.13),
+      transparent 55%
+    );
+}
+
+/* ==========================================
+   CENTER — APX LOGO
+========================================== */
+
+.center {
+  position: relative;
+  z-index: 1;
+  width: min(92%, 1050px);
+  text-align: center;
+
+  opacity: 1;
+  visibility: visible;
+
+  will-change: transform, opacity;
+}
+
+.eyebrow {
+  margin: 0 0 30px;
+  font-size: 11px;
+  letter-spacing: 0.38em;
+  color: #91a8d7;
+}
+
+.title {
+  font-size: clamp(32px, 5.6vw, 86px);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+  margin: 0 0 15px;
+}
+
+.logo {
+  font-size: clamp(110px, 23vw, 320px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.11em;
+  padding-right: 0.11em;
+  white-space: nowrap;
+}
+
+.blue {
+  color: #1677ff;
+}
+
+.technologies {
+  font-size: clamp(28px, 5.2vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 14px 0 0;
+  letter-spacing: -0.05em;
+}
+
+.description {
+  font-size: clamp(14px, 1.6vw, 19px);
+  color: #aebad1;
+  margin: 28px 0 0;
+}
+
+/* ==========================================
+   SCROLL INDICATOR
+========================================== */
+
+.hint {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #9cb5e7;
+  white-space: nowrap;
+}
+
+.hint span:last-child {
+  font-size: 24px;
+  animation: bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+/* ==========================================
+   PARTNER BANNER — PREMIUM NEON
+========================================== */
+
+.partnerBanner {
+  position: absolute;
+  top: 108px;
+  left: clamp(22px, 3.5vw, 65px);
+  z-index: 10;
+
+  width: min(610px, 42vw);
+  min-height: 116px;
+  padding: 17px 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: #fff;
+  text-decoration: none;
+
+  background: linear-gradient(
+    120deg,
+    rgba(12, 29, 65, 0.97),
+    rgba(6, 16, 40, 0.96)
+  );
+
+  border: 1px solid #219fff;
+  border-radius: 17px 11px 20px 11px;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 145, 255, 0.12),
+    0 0 22px rgba(0, 145, 255, 0.34),
+    0 0 45px rgba(0, 100, 255, 0.12),
+    inset 0 0 30px rgba(0, 110, 255, 0.12);
+
+  transform: skewX(-8deg);
+
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    translate 0.3s ease;
+}
+
+.partnerBanner:hover {
+  border-color: #80e3ff;
+
+  box-shadow:
+    0 0 0 1px rgba(80, 200, 255, 0.28),
+    0 0 32px rgba(0, 155, 255, 0.55),
+    0 0 60px rgba(0, 100, 255, 0.22),
+    inset 0 0 30px rgba(0, 130, 255, 0.18);
+
+  translate: 0 -3px;
+}
+
+.partnerBanner:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+
+.partnerBanner::before,
+.partnerBanner::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #009bff,
+    #e6faff,
+    #009bff,
+    transparent
+  );
+
+  filter: drop-shadow(0 0 8px #00aaff);
+}
+
+.partnerBanner::before {
+  top: -1px;
+}
+
+.partnerBanner::after {
+  bottom: -1px;
+}
+
+/* ==========================================
+   LIGHT EFFECT
+========================================== */
+
+.partnerShine {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.partnerShine::after {
+  content: "";
+  position: absolute;
+  top: -80%;
+  left: -40%;
+  width: 22%;
+  height: 260%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(125, 210, 255, 0.15),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  animation: partnerSweep 6s ease-in-out infinite;
+}
+
+@keyframes partnerSweep {
+  0%, 65% {
+    left: -40%;
+  }
+
+  100% {
+    left: 125%;
+  }
+}
+
+/* ==========================================
+   PARTNER CONTENT
+========================================== */
+
+.partnerLabel,
+.partnerDivider,
+.partnerBrand,
+.partnerArrow {
+  transform: skewX(8deg);
+}
+
+.partnerLabel {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.handshake {
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+  color: #61c5ff;
+  filter: drop-shadow(0 0 5px #008cff);
+}
+
+.partnerDivider {
+  width: 1px;
+  height: 70px;
+  flex-shrink: 0;
+
+  background: linear-gradient(
+    transparent,
+    #4c9aff,
+    transparent
+  );
+}
+
+.partnerBrand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.nrLogo {
+  width: 52px;
+  height: 75px;
+  object-fit: contain;
+  flex-shrink: 0;
+
+  filter: drop-shadow(
+    0 0 5px rgba(255, 255, 255, 0.12)
+  );
+}
+
+.partnerText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+}
+
+.partnerText strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(19px, 1.75vw, 28px);
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.partnerHeart {
+  position: relative;
+  color: #f5bb75;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.partnerHeart::before,
+.partnerHeart::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35px;
+  height: 1px;
+  background: #c99857;
+}
+
+.partnerHeart::before {
+  right: calc(100% + 7px);
+}
+
+.partnerHeart::after {
+  left: calc(100% + 7px);
+}
+
+.partnerText small {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: #f0e0d5;
+  white-space: nowrap;
+}
+
+.partnerArrow {
+  margin-left: auto;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1;
+  color: #d3efff;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1200px) {
+  .partnerBanner {
+    width: 450px;
+    padding: 14px 16px;
+    gap: 11px;
+  }
+
+  .partnerLabel {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .handshake {
+    width: 22px;
+    height: 22px;
+  }
+
+  .partnerBrand {
+    gap: 9px;
+  }
+
+  .nrLogo {
+    width: 40px;
+    height: 60px;
+  }
+
+  .partnerText strong {
+    font-size: 20px;
+  }
+
+  .partnerText small {
+    font-size: 8px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .track {
+    height: 165vh;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.2em;
+  }
+
+  .description {
+    margin-top: 22px;
+  }
+
+  .partnerBanner {
+    top: 86px;
+    left: 50%;
+
+    width: min(92vw, 390px);
+    min-height: 82px;
+    padding: 11px 12px;
+    gap: 9px;
+
+    transform: translateX(-50%);
+    border-radius: 13px;
+  }
+
+  .partnerLabel,
+  .partnerDivider,
+  .partnerBrand,
+  .partnerArrow {
+    transform: none;
+  }
+
+  .partnerLabel {
+    font-size: 10px;
+    gap: 5px;
+  }
+
+  .handshake {
+    width: 18px;
+    height: 18px;
+  }
+
+  .partnerDivider {
+    height: 48px;
+  }
+
+  .partnerBrand {
+    gap: 7px;
+  }
+
+  .nrLogo {
+    width: 31px;
+    height: 46px;
+  }
+
+  .partnerText strong {
+    font-size: 15px;
+  }
+
+  .partnerText small {
+    font-size: 7px;
+  }
+
+  .partnerHeart {
+    font-size: 12px;
+  }
+
+  .partnerHeart::before,
+  .partnerHeart::after {
+    width: 17px;
+  }
+
+  .partnerArrow {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 380px) {
+  .partnerBanner {
+    gap: 6px;
+    padding: 10px 8px;
+  }
+
+  .partnerLabel {
+    font-size: 9px;
+  }
+
+  .partnerText strong {
+    font-size: 13px;
+  }
+
+  .partnerText small {
+    font-size: 6px;
+  }
+
+  .nrLogo {
+    width: 27px;
+    height: 42px;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    height: 100svh;
+  }
+
+  .hint span:last-child,
+  .partnerShine::after {
+    animation: none;
+  }
+
+  .partnerBanner {
+    transition: none;
+  }
+}

@@ -1,0 +1,550 @@
+
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 52% 0%, #123c6b55, transparent 48%),
+    linear-gradient(155deg, #050b19 0%, #07152b 56%, #060b17 100%);
+  color: #f5f8ff;
+  padding: 95px 24px 100px;
+  scroll-margin-top: 30px;
+}
+
+.section * {
+  box-sizing: border-box;
+}
+
+.backgroundGlow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 8% 75%, #0b6bc42b, transparent 45%),
+    radial-gradient(ellipse at 95% 65%, #1559af30, transparent 42%);
+}
+
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: .4em;
+  color: #b9d9ff;
+  margin: 0 0 10px;
+}
+
+.heading h2 {
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.08;
+  margin: 0 0 17px;
+}
+
+.heading h2 span {
+  color: #00b8ff;
+  text-shadow: 0 0 25px #008cff55;
+}
+
+.heading > p:last-child {
+  font-size: clamp(14px, 1.6vw, 19px);
+  line-height: 1.55;
+  color: #c9d5e9;
+  margin: 0;
+}
+
+.partnerCard {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  overflow: hidden;
+  border: 1px solid #4597e9;
+  border-radius: 25px;
+  background: linear-gradient(130deg, #061122, #091c35);
+  box-shadow: 0 0 0 1px #3e9cf11a, 0 0 32px #007bff1e;
+  min-height: 435px;
+}
+
+.visual {
+  position: relative;
+  min-height: 435px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, #5d253d 0%, #271423 39%, #091124 75%);
+  display: grid;
+  place-items: center;
+}
+
+.visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent 75%, #071326bb);
+}
+
+.giftScene {
+  position: relative;
+  width: min(72%, 340px);
+  height: 320px;
+  filter: drop-shadow(0 22px 32px #0009);
+}
+
+.giftGlow {
+  position: absolute;
+  inset: 18px -20px 0;
+  background: radial-gradient(circle, #c46d7955, transparent 68%);
+  filter: blur(12px);
+}
+
+.giftBox {
+  position: absolute;
+  bottom: 18px;
+  left: 5%;
+  width: 90%;
+  height: 215px;
+  background: linear-gradient(135deg, #2b1e27, #0c101a 65%, #28202a);
+  border: 1px solid #9c6a6a;
+  border-radius: 6px;
+  box-shadow: inset 0 0 45px #ffffff0b, 0 12px 30px #0009;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transform: perspective(600px) rotateY(-5deg);
+}
+
+.giftBox span {
+  font-family: Georgia, serif;
+  font-size: clamp(25px, 3vw, 38px);
+  font-style: italic;
+  color: #f4c9b4;
+  text-shadow: 0 2px 10px #bd7c7b66;
+  white-space: nowrap;
+}
+
+.giftBox small {
+  font-size: 9px;
+  letter-spacing: .2em;
+  color: #e5c4b5;
+}
+
+.giftLid {
+  position: absolute;
+  z-index: 3;
+  top: 70px;
+  left: 1%;
+  width: 98%;
+  height: 46px;
+  background: linear-gradient(135deg, #4c2538, #16111b);
+  border: 1px solid #a65b6e;
+  border-radius: 5px;
+  transform: rotate(-3deg);
+}
+
+.ribbonVertical {
+  position: absolute;
+  z-index: 4;
+  top: 72px;
+  bottom: 18px;
+  left: 47%;
+  width: 37px;
+  background: linear-gradient(90deg, #581324, #e94b7b 45%, #74122e);
+  transform: rotate(-3deg);
+  box-shadow: 0 0 9px #0007;
+}
+
+.ribbonHorizontal {
+  position: absolute;
+  z-index: 4;
+  top: 83px;
+  left: 2%;
+  width: 96%;
+  height: 23px;
+  background: linear-gradient(#aa214f, #e95c85, #7e1839);
+  transform: rotate(-3deg);
+}
+
+.bowLeft,
+.bowRight {
+  position: absolute;
+  z-index: 5;
+  top: 2px;
+  width: 106px;
+  height: 88px;
+  border: 21px solid #bd315d;
+  border-radius: 80% 15% 80% 15%;
+  box-shadow: inset 0 0 8px #0006, 0 4px 10px #0006;
+}
+
+.bowLeft {
+  left: calc(50% - 104px);
+  transform: rotate(25deg);
+}
+
+.bowRight {
+  left: calc(50% - 1px);
+  transform: scaleX(-1) rotate(25deg);
+}
+
+.bowKnot {
+  position: absolute;
+  z-index: 6;
+  top: 54px;
+  left: calc(50% - 23px);
+  width: 46px;
+  height: 35px;
+  background: linear-gradient(130deg, #ed6d8b, #7d1739);
+  border-radius: 45%;
+  box-shadow: 0 3px 8px #0009;
+}
+
+.content {
+  padding: clamp(28px, 3vw, 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.partnerBadge {
+  border: 1px solid #807bff80;
+  background: linear-gradient(90deg, #5934ad, #112958);
+  border-radius: 18px;
+  padding: 8px 17px;
+  color: #f3edff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.partnerName {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.giftIcon {
+  font-size: 60px;
+  line-height: 1;
+  color: #e3b7a7;
+}
+
+.partnerName h3 {
+  font-family: Georgia, serif;
+  font-size: clamp(38px, 4vw, 62px);
+  font-weight: 400;
+  font-style: italic;
+  color: #f1cbb6;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.partnerName p {
+  letter-spacing: .25em;
+  font-size: 11px;
+  color: #e9c9bb;
+  margin: 9px 0 0;
+}
+
+.description {
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.55;
+  color: #e1e8f4;
+  margin: 0;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  color: #c6dafa;
+  font-size: 13px;
+}
+
+.features span {
+  padding-right: 16px;
+  border-right: 1px solid #39608c;
+}
+
+.features span:last-child {
+  border-right: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  width: 100%;
+}
+
+.primaryButton,
+.secondaryButton,
+.joinButton {
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.primaryButton {
+  color: #fff;
+  background: linear-gradient(180deg, #009cff, #0750d7);
+  border: 1px solid #16ceff;
+  box-shadow: 0 0 18px #008cff65;
+}
+
+.secondaryButton {
+  color: #fff;
+  background: transparent;
+  border: 1px solid #496d9a;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.joinButton:hover {
+  transform: translateY(-2px);
+}
+
+.disabledButton {
+  opacity: .6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.disabledButton:hover {
+  transform: none;
+}
+
+.details {
+  border-left: 3px solid #26aaff;
+  padding: 10px 16px;
+  background: #0d2b4c80;
+  color: #cbdcf4;
+  border-radius: 0 10px 10px 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.details p {
+  margin: 6px 0 0;
+}
+
+.joinCard {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border: 1px solid #2b619e;
+  border-radius: 19px;
+  padding: 25px 30px;
+  background: #071324cc;
+}
+
+.joinIcon {
+  font-size: 42px;
+}
+
+.joinText {
+  flex: 1;
+}
+
+.joinText h3 {
+  font-size: 23px;
+  margin: 0 0 7px;
+}
+
+.joinText p {
+  font-size: 15px;
+  color: #c6d5eb;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.joinButton {
+  background: linear-gradient(#008cff, #0752c9);
+  color: white;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .partnerCard {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 350px;
+  }
+
+  .content {
+    padding: 30px;
+  }
+
+  .joinCard {
+    flex-wrap: wrap;
+  }
+
+  .joinButton {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 65px 16px;
+  }
+
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: .25em;
+  }
+
+  .heading {
+    margin-bottom: 27px;
+  }
+
+  .partnerCard {
+    border-radius: 18px;
+  }
+
+  .visual {
+    min-height: 290px;
+  }
+
+  .giftScene {
+    transform: scale(.75);
+    transform-origin: center;
+  }
+
+  .content {
+    padding: 25px 20px;
+    gap: 16px;
+  }
+
+  .giftIcon {
+    font-size: 38px;
+  }
+
+  .partnerName {
+    gap: 9px;
+  }
+
+  .partnerName h3 {
+    font-size: 36px;
+  }
+
+  .partnerName p {
+    font-size: 9px;
+    letter-spacing: .12em;
+  }
+
+  .features {
+    gap: 8px;
+  }
+
+  .features span {
+    border: 0;
+    padding-right: 0;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .joinCard {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .joinIcon {
+    font-size: 30px;
+  }
+
+  .joinText h3 {
+    font-size: 20px;
+  }
+
+  .joinText p {
+    font-size: 13px;
+  }
+
+  .joinButton {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton,
+  .secondaryButton,
+  .joinButton {
+    transition: none;
+  }
+}
+
+/* Оригинална снимка на Неземен Рай */
+
+.visual {
+  position: relative;
+  min-height: 435px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #071326;
+  padding: 12px;
+}
+
+.partnerImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 14px;
+}
+
+@media (max-width: 900px) {
+  .visual {
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .partnerImage {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .visual {
+    padding: 8px;
+  }
+
+  .partnerImage {
+    border-radius: 10px;
+  }
+}
