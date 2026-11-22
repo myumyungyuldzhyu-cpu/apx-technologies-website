@@ -27,7 +27,6 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
-
   background:
     radial-gradient(
       ellipse at 55% 55%,
@@ -50,10 +49,8 @@
   z-index: 1;
   width: min(92%, 1050px);
   text-align: center;
-
   opacity: 1;
   visibility: visible;
-
   will-change: transform, opacity;
 }
 
@@ -108,12 +105,10 @@
   bottom: 38px;
   left: 50%;
   transform: translateX(-50%);
-
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: center;
-
   font-size: 10px;
   letter-spacing: 0.2em;
   color: #9cb5e7;
@@ -144,35 +139,27 @@
   top: 108px;
   left: clamp(22px, 3.5vw, 65px);
   z-index: 10;
-
   width: min(610px, 42vw);
   min-height: 116px;
   padding: 17px 20px;
-
   display: flex;
   align-items: center;
   gap: 16px;
-
   color: #fff;
   text-decoration: none;
-
   background: linear-gradient(
     120deg,
     rgba(12, 29, 65, 0.97),
     rgba(6, 16, 40, 0.96)
   );
-
   border: 1px solid #219fff;
   border-radius: 17px 11px 20px 11px;
-
   box-shadow:
     0 0 0 1px rgba(0, 145, 255, 0.12),
     0 0 22px rgba(0, 145, 255, 0.34),
     0 0 45px rgba(0, 100, 255, 0.12),
     inset 0 0 30px rgba(0, 110, 255, 0.12);
-
   transform: skewX(-8deg);
-
   transition:
     box-shadow 0.3s ease,
     border-color 0.3s ease,
@@ -181,13 +168,11 @@
 
 .partnerBanner:hover {
   border-color: #80e3ff;
-
   box-shadow:
     0 0 0 1px rgba(80, 200, 255, 0.28),
     0 0 32px rgba(0, 155, 255, 0.55),
     0 0 60px rgba(0, 100, 255, 0.22),
     inset 0 0 30px rgba(0, 130, 255, 0.18);
-
   translate: 0 -3px;
 }
 
@@ -204,7 +189,6 @@
   right: 12%;
   height: 2px;
   pointer-events: none;
-
   background: linear-gradient(
     90deg,
     transparent,
@@ -213,7 +197,6 @@
     #009bff,
     transparent
   );
-
   filter: drop-shadow(0 0 8px #00aaff);
 }
 
@@ -223,6 +206,37 @@
 
 .partnerBanner::after {
   bottom: -1px;
+}
+
+/* ==========================================
+   SPONSOR BANNER — RIGHT SIDE
+========================================== */
+
+.sponsorBanner {
+  left: auto;
+  right: clamp(22px, 3.5vw, 65px);
+  width: min(610px, 42vw);
+}
+
+.sponsorLogo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(
+    0 0 7px rgba(120, 195, 255, 0.2)
+  );
+}
+
+.sponsorBanner .partnerText strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 1.55vw, 25px);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.sponsorBanner .partnerText small {
+  color: #b8d9ff;
 }
 
 /* ==========================================
@@ -244,14 +258,12 @@
   left: -40%;
   width: 22%;
   height: 260%;
-
   background: linear-gradient(
     90deg,
     transparent,
     rgba(125, 210, 255, 0.15),
     transparent
   );
-
   transform: rotate(25deg);
   animation: partnerSweep 6s ease-in-out infinite;
 }
@@ -298,7 +310,6 @@
   width: 1px;
   height: 70px;
   flex-shrink: 0;
-
   background: linear-gradient(
     transparent,
     #4c9aff,
@@ -318,7 +329,6 @@
   height: 75px;
   object-fit: contain;
   flex-shrink: 0;
-
   filter: drop-shadow(
     0 0 5px rgba(255, 255, 255, 0.12)
   );
@@ -417,6 +427,61 @@
   .partnerText small {
     font-size: 8px;
   }
+
+  .sponsorLogo {
+    width: 45px;
+    height: 55px;
+  }
+
+  .sponsorBanner .partnerText strong {
+    font-size: 17px;
+  }
+}
+
+/* ==========================================
+   SMALL DESKTOP / TABLET
+========================================== */
+
+@media (min-width: 701px) and (max-width: 1050px) {
+  .partnerBanner {
+    width: calc(50% - 36px);
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .partnerLabel {
+    font-size: 10px;
+  }
+
+  .partnerDivider {
+    height: 50px;
+  }
+
+  .nrLogo {
+    width: 30px;
+    height: 45px;
+  }
+
+  .sponsorLogo {
+    width: 34px;
+    height: 45px;
+  }
+
+  .partnerText strong {
+    font-size: 15px;
+  }
+
+  .sponsorBanner .partnerText strong {
+    font-size: 13px;
+  }
+
+  .partnerText small {
+    font-size: 7px;
+  }
+
+  .partnerArrow {
+    font-size: 25px;
+  }
 }
 
 /* ==========================================
@@ -439,14 +504,20 @@
   .partnerBanner {
     top: 86px;
     left: 50%;
-
+    right: auto;
     width: min(92vw, 390px);
     min-height: 82px;
     padding: 11px 12px;
     gap: 9px;
-
     transform: translateX(-50%);
     border-radius: 13px;
+  }
+
+  .sponsorBanner {
+    top: 180px;
+    left: 50%;
+    right: auto;
+    width: min(92vw, 390px);
   }
 
   .partnerLabel,
@@ -479,8 +550,17 @@
     height: 46px;
   }
 
+  .sponsorLogo {
+    width: 35px;
+    height: 46px;
+  }
+
   .partnerText strong {
     font-size: 15px;
+  }
+
+  .sponsorBanner .partnerText strong {
+    font-size: 13px;
   }
 
   .partnerText small {
@@ -515,12 +595,21 @@
     font-size: 13px;
   }
 
+  .sponsorBanner .partnerText strong {
+    font-size: 12px;
+  }
+
   .partnerText small {
     font-size: 6px;
   }
 
   .nrLogo {
     width: 27px;
+    height: 42px;
+  }
+
+  .sponsorLogo {
+    width: 29px;
     height: 42px;
   }
 }

@@ -32,10 +32,11 @@ const certificates: Certificate[] = [
     image: "/certificates/project-management.jpg",
   },
   {
-    id: "upcoming",
-    title: "Очаквайте скоро",
-    issuer: "Следващо професионално обучение",
-    year: "",
+    id: "risk-management",
+    title: "Risk Management",
+    issuer: "International Business Management Institute",
+    year: "2026",
+    image: "/certificates/risk-management.png",
   },
 ];
 
@@ -82,8 +83,9 @@ export default function CertificateSlider() {
 
     if (difference === 0) return "center";
     if (difference === 1) return "right";
+    if (difference === count - 1) return "left";
 
-    return "left";
+    return "hidden";
   }
 
   useEffect(() => {
@@ -620,6 +622,14 @@ export default function CertificateSlider() {
             rotateY(-36deg)
             scale(0.83);
           filter: brightness(0.74);
+        }
+
+        .apx-showcase__certificate--hidden {
+          z-index: 1;
+          opacity: 0;
+          pointer-events: none;
+          transform: translateX(-50%) translateZ(-300px) scale(0.65);
+          filter: brightness(0.5);
         }
 
         .apx-showcase__outer-frame {

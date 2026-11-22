@@ -63,9 +63,48 @@
   margin: 0;
 }
 
+/* TWO-COLUMN LAYOUT */
+
+.collaborationGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.collaborationColumn {
+  min-width: 0;
+}
+
+.columnHeading {
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.columnEyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .32em;
+  color: #53baff;
+}
+
+.columnHeading h3 {
+  margin: 0;
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 750;
+  letter-spacing: -.035em;
+  color: #f5f8ff;
+}
+
+/* ORIGINAL PARTNER CARD */
+
 .partnerCard {
   display: grid;
-  grid-template-columns: 1fr 1.12fr;
+  grid-template-columns: 1fr;
   overflow: hidden;
   border: 1px solid #4597e9;
   border-radius: 25px;
@@ -77,11 +116,12 @@
 .visual {
   position: relative;
   min-height: 435px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 40%, #5d253d 0%, #271423 39%, #091124 75%);
-  display: grid;
-  place-items: center;
+  background: #071326;
+  padding: 12px;
 }
 
 .visual::after {
@@ -90,6 +130,16 @@
   inset: 0;
   pointer-events: none;
   background: linear-gradient(90deg, transparent 75%, #071326bb);
+}
+
+.partnerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 540px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 14px;
 }
 
 .giftScene {
@@ -347,6 +397,179 @@
   margin: 6px 0 0;
 }
 
+/* SPONSOR CARD */
+
+.sponsorCard {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #3a80c6;
+  border-radius: 25px;
+  background:
+    radial-gradient(circle at 90% 0%, #1453a62c, transparent 48%),
+    linear-gradient(145deg, #071629, #0a1c35 60%, #071326);
+  box-shadow:
+    0 0 0 1px #3e9cf112,
+    0 0 32px #007bff16;
+}
+
+.sponsorVisual {
+  position: relative;
+  min-height: 435px;
+  padding: 38px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background:
+    radial-gradient(circle at 50% 52%, #1c579244, transparent 58%),
+    linear-gradient(155deg, #0a1b32, #061224);
+  border-bottom: 1px solid #2a5787;
+}
+
+.sponsorVisual::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #4e96d22b;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px #4e96d208,
+    0 0 80px #168dff17;
+  pointer-events: none;
+}
+
+.sponsorVisualLabel,
+.sponsorVisualCaption {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-align: center;
+  color: #9ccaff;
+}
+
+.sponsorLogo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(82%, 340px);
+  max-height: 265px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px #0007);
+}
+
+.sponsorContent {
+  padding: clamp(28px, 3vw, 44px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.sponsorBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border: 1px solid #4b9ce57a;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #103c6d, #112b4e);
+  color: #c6e7ff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sponsorName {
+  margin: 0;
+  font-size: clamp(32px, 3.2vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.045em;
+  color: #ffffff;
+}
+
+.sponsorName span {
+  color: #69c3ff;
+}
+
+.sponsorSubtitle {
+  margin: -7px 0 0;
+  color: #83b7e9;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  line-height: 1.6;
+}
+
+.sponsorDescription {
+  margin: 0;
+  color: #d6e4f5;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.65;
+}
+
+.sponsorHighlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #285d92;
+  border-radius: 15px;
+  background: #0b2a4a9c;
+}
+
+.highlightIcon {
+  flex-shrink: 0;
+  font-size: 28px;
+}
+
+.sponsorHighlight strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #eaf5ff;
+}
+
+.sponsorHighlight p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #adc9e5;
+}
+
+.sponsorFooter {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-top: 15px;
+  width: 100%;
+  border-top: 1px solid #2a527c;
+}
+
+.sponsorFooterIcon {
+  font-size: 28px;
+  color: #6bc4ff;
+}
+
+.sponsorFooter p {
+  margin: 0;
+  color: #b8d4ed;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.sponsorFooter strong {
+  color: #ffffff;
+}
+
+/* JOIN CARD */
+
 .joinCard {
   margin-top: 32px;
   display: flex;
@@ -384,13 +607,63 @@
   white-space: nowrap;
 }
 
-@media (max-width: 900px) {
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .collaborationGrid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .columnHeading {
+    min-height: auto;
+  }
+
   .partnerCard {
+    grid-template-columns: 1fr 1.12fr;
+  }
+
+  .visual {
+    min-height: 435px;
+  }
+
+  .partnerImage {
+    height: 100%;
+  }
+
+  .sponsorCard {
+    display: grid;
+    grid-template-columns: 1fr 1.12fr;
+  }
+
+  .sponsorVisual {
+    min-height: 435px;
+    border-bottom: 0;
+    border-right: 1px solid #2a5787;
+  }
+}
+
+@media (max-width: 900px) {
+  .partnerCard,
+  .sponsorCard {
     grid-template-columns: 1fr;
   }
 
   .visual {
-    min-height: 350px;
+    min-height: auto;
+    padding: 12px;
+  }
+
+  .partnerImage {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+
+  .sponsorVisual {
+    min-height: 320px;
+    border-right: 0;
+    border-bottom: 1px solid #2a5787;
   }
 
   .content {
@@ -420,12 +693,25 @@
     margin-bottom: 27px;
   }
 
-  .partnerCard {
+  .columnHeading {
+    margin-bottom: 15px;
+  }
+
+  .columnHeading h3 {
+    font-size: 25px;
+  }
+
+  .partnerCard,
+  .sponsorCard {
     border-radius: 18px;
   }
 
   .visual {
-    min-height: 290px;
+    padding: 8px;
+  }
+
+  .partnerImage {
+    border-radius: 10px;
   }
 
   .giftScene {
@@ -473,6 +759,41 @@
     width: 100%;
   }
 
+  .sponsorVisual {
+    min-height: 280px;
+    padding: 28px 15px;
+  }
+
+  .sponsorVisual::before {
+    width: 210px;
+    height: 210px;
+  }
+
+  .sponsorLogo {
+    width: min(85%, 270px);
+    max-height: 190px;
+  }
+
+  .sponsorVisualLabel,
+  .sponsorVisualCaption {
+    font-size: 9px;
+    letter-spacing: .18em;
+  }
+
+  .sponsorContent {
+    padding: 25px 20px;
+    gap: 16px;
+  }
+
+  .sponsorName {
+    font-size: 34px;
+  }
+
+  .sponsorHighlight {
+    padding: 15px;
+    gap: 12px;
+  }
+
   .joinCard {
     padding: 20px;
     gap: 12px;
@@ -500,51 +821,5 @@
   .secondaryButton,
   .joinButton {
     transition: none;
-  }
-}
-
-/* Оригинална снимка на Неземен Рай */
-
-.visual {
-  position: relative;
-  min-height: 435px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #071326;
-  padding: 12px;
-}
-
-.partnerImage {
-  display: block;
-  width: 100%;
-  height: 100%;
-  max-height: 540px;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 14px;
-}
-
-@media (max-width: 900px) {
-  .visual {
-    min-height: auto;
-    padding: 12px;
-  }
-
-  .partnerImage {
-    width: 100%;
-    height: auto;
-    max-height: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .visual {
-    padding: 8px;
-  }
-
-  .partnerImage {
-    border-radius: 10px;
   }
 }
